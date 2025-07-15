@@ -36,33 +36,37 @@ This contract demonstrates a recursive callback attack on contract Grader5.sol d
   This vulnerability exists because Grader5 trusts that msg.sender will be a legitimate user 
   and doesn't verify if it's a contract that can callback Grader5 when it executes: 
        payable(msg.sender).call{value: 1, gas: gasleft()}("");
-           - gasleft() in this context is a security best practice that ensures the receiving contract has enough gas to execute
+           - gasleft() in this context is a security best practice that ensures the 
+             receiving contract has enough gas to execute
 
-  A proper solution would be to use OpenZeppelin's isContract() to prevent contracts from calling these functions.
+  A proper solution would be to use OpenZeppelin's isContract() to prevent contracts 
+  from calling these functions.
 
 # The Jaquer contract needs sufficient ETH for 3 calls (minimum 12 wei).
 
 # The name provided to gradeMe must be unique (not previously registered in Grader5).
 
 # The attack will only work if:
-    - Current timestamp is within startTime and deadline range (default values allow most timestamps)
+    - Current timestamp is within startTime and deadline range (check at deployed contract)
     - First msg.value > 3 wei
-    - After the first retrieve() call, the callback() recursively calls retrieve() again to increment counter[msg.sender]
+    - After the first retrieve() call, the callback() recursively calls retrieve() again to 
+      increment counter[msg.sender]
 
 # We need to specify msg.value >12 in the initial call in addition to each retrieve() call 
-   (even if the contract has sufficient balance). This is due to how Solidity handles ETH in inter-contract calls. 
-   When we execute:     
+   (even if the contract has sufficient balance). This is due to how Solidity handles ETH in 
+   inter-contract calls. When we execute:     
         grader.retrieve{value: 4}();
    We're not using the contract's balance, but sending ETH with the call. 
-   This is critical because:
 
+   This is critical because:
     a) The value: 4 must come explicitly from:
           - The initial transaction's msg.value, or
           - ETH received in the same transaction (with limitations)
     b) The contract balance isn't automatically used for these calls.
 
   Why isn't contract balance sufficient?:
-    a) Security mechanism: Solidity doesn't automatically use contract balance for external calls to prevent unintended spending
+    a) Security mechanism: Solidity doesn't automatically use contract balance for external calls 
+       to prevent unintended spending
     b) Recursive callback issue:
          - When receiving ETH in receive(), that ETH isn't immediately available for the next call
          - The balance updates after execution completes
