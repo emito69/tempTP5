@@ -144,7 +144,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"jaquer3.sol": "Jaquer"
+			"jaquer3.sol": "Jaquer3"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -159,11 +159,11 @@
 	},
 	"sources": {
 		"jaquer3.sol": {
-			"keccak256": "0x1949564945737b8279a72375b8457637f7848232dde66a2c366c5cab3d2a51ab",
+			"keccak256": "0xd7ba4bff660e0b51ba48bd59dcf816286470b09b17c365c555f500e7526178c0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b7e56cef65403bfb280b813742541ff94db9a93f3cd3f9f7520a29500f98ba3d",
-				"dweb:/ipfs/QmQFYCFKfGRTnnHXZWrdF4AHoXPzkmNdBJx6pArer75Xr8"
+				"bzz-raw://83847c22901363f021d465d3d6969bcbd69ce22c9748d2e4cc86361ed0b2092b",
+				"dweb:/ipfs/QmX2N84HsQQ4iKvNkyXLngdVKkwg9Z3ajH1wwAbwXE7gVx"
 			]
 		}
 	},

@@ -2,7 +2,6 @@
 pragma solidity ^0.8.22;
 
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
-//import "hardhat/console.sol";
 
 contract Grader5 is Ownable{
 
@@ -19,7 +18,6 @@ contract Grader5 is Ownable{
     function retrieve() external payable {
         require(msg.value > 3,"not enough money");
         counter[msg.sender]++;
-        //console.log(counter[msg.sender]); //EMIIIII
         require(counter[msg.sender]<4);
         (bool sent, ) = payable(msg.sender).call{value: 1, gas: gasleft()}("");
         require(sent, "Failed to send Ether");

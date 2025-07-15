@@ -9,7 +9,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "",
+						"name": "addr",
 						"type": "address"
 					}
 				],
@@ -46,19 +46,50 @@
 			}
 		],
 		"devdoc": {
+			"details": "Interface for interacting with the vulnerable Grader5 contract",
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"counter(address)": {
+					"params": {
+						"addr": "The address to query"
+					},
+					"returns": {
+						"_0": "The number of times retrieve() was called by this address"
+					}
+				},
+				"gradeMe(string)": {
+					"details": "Only works if counter[msg.sender] > 1 and within valid timestamp rangeCalculates grade based on studentCounter and divisorPrevents duplicate registrations (name and address)",
+					"params": {
+						"name": "The student name to register (must be unique)"
+					}
+				},
+				"retrieve()": {
+					"details": "Requires msg.value > 3 wei, refunds 1 wei to callerResets counter to 0 if counter[msg.sender] < 2 after increment"
+				}
+			},
+			"title": "IGrader5 Interface",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"counter(address)": {
+					"notice": "Gets the call counter for a specific address"
+				},
+				"gradeMe(string)": {
+					"notice": "Function to register a grade for the caller"
+				},
+				"retrieve()": {
+					"notice": "Function to deposit ETH and increment caller's counter"
+				}
+			},
+			"notice": "This interface defines the functions we need to interact with Grader5.sol",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"jaquer.sol": "IGrader5"
+			"jaquer3.sol": "IGrader5"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -72,12 +103,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"jaquer.sol": {
-			"keccak256": "0xb8c0cf48edcdb52fb972d32191f88db28b26633a897a0ef7a5eed9b66285a4d7",
+		"jaquer3.sol": {
+			"keccak256": "0xd7ba4bff660e0b51ba48bd59dcf816286470b09b17c365c555f500e7526178c0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a4ca1d1d40ca6a7762da3c87f278efe3ce5bf4e9205c3d6d1e52787e13dd7b6f",
-				"dweb:/ipfs/QmdahTMBhPQnekatHdLTqT15QACVPqHkWDkJ7Da7WsgGry"
+				"bzz-raw://83847c22901363f021d465d3d6969bcbd69ce22c9748d2e4cc86361ed0b2092b",
+				"dweb:/ipfs/QmX2N84HsQQ4iKvNkyXLngdVKkwg9Z3ajH1wwAbwXE7gVx"
 			]
 		}
 	},
