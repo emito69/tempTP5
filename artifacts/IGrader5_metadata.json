@@ -89,7 +89,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"jaquer3.sol": "IGrader5"
+			"Jaquer3.sol": "IGrader5"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -103,7 +103,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"jaquer3.sol": {
+		"Jaquer3.sol": {
 			"keccak256": "0xd7ba4bff660e0b51ba48bd59dcf816286470b09b17c365c555f500e7526178c0",
 			"license": "MIT",
 			"urls": [
