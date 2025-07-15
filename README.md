@@ -18,13 +18,13 @@ Solidity_TP4
 <div id="header" align="center">
   <h2 align="center"> <img src="https://github.com/devicons/devicon/blob/master/icons/solidity/solidity-plain.svg" title="Solidity" alt="Solidity" height="30" width="40"/> TP5 Solidity ETH-KIPU <img src="https://github.com/devicons/devicon/blob/master/icons/solidity/solidity-plain.svg" title="Solidity" alt="Solidity" height="30" width="40"/> </h2>
   Code Documentation and Explanation
-  <h6 align="center"> This repository contains a Exploit contract targeting vulnerabilities in Grader5.sol.</h6>
+  <h4 align="center"> This repository contains a Exploit contract targeting vulnerabilities in Grader5.sol.</h4>
    <br>
 </div>
 
 ## Overview
 
-This contract demonstrates a recursive callback attack on contract Grader5.sol deployed y Sepolia.
+This contract demonstrates a recursive callback attack on contract Grader5.sol deployed in Etherreum Testnet (Sepolia).
 
 ## Hack Analysis
 
