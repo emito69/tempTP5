@@ -87,7 +87,7 @@ This contract demonstrates a recursive callback attack on contract Grader5.sol d
 
 - Grader5 Address: Have the target Grader5.sol contract address.
 
-- Unique Name: Prepare a unique string (e.g., "Emiliano") not already registered in Grader5.
+- Unique Name: Prepare a unique string (e.g., "Emi") not already registered in Grader5.
 
 ### 2. Deployment
 ```javascript annotate
@@ -111,27 +111,20 @@ What happens:
 
 - Sets counter[jaquerAddress] = 3 in Grader5.
 
-- Finally calls gradeMe("Emiliano") to register your grade (100 if first attacker).
+- Finally calls gradeMe("Emi") to register your grade (100 if first attacker).
 
 ### 4. Verify Success
 ```javascript annotate
 // Check your grade in Grader5
-const grade = await grader5.students("Emiliano");
-console.log("Grade:", grade); // Should return 100 (if first attacker)
+const grade = await grader5.students("Emi");
+console.log("Grade:", grade); // Should return 100 (if one of the first 8 attacker)
 ```
 
 ### 5. Withdraw Funds
 ```javascript
-// Recover leftover ETH (3 wei remains after attack)
+// Recover leftover ETH (weis remainning after attack)
 await jaquer.withdraw();
 ```
-
-## Key Notes
-- Timing: Works only if block.timestamp is within Grader5's startTime/deadline (default allows any time).
-
-- Gas: Ensure sufficient gas for the recursive calls (~150k-200k gas).
-
-- Reusability: Each attack requires a new unique name.
 
 ## Key Notes
 - Timing: Works only if block.timestamp is within Grader5's startTime/deadline (default allows any time).
