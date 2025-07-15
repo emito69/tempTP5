@@ -339,19 +339,11 @@
 			]
 		},
 		"Grader5.sol": {
-			"keccak256": "0xf080ae0ca8839b7f0f0cc1da7b5f55664c8ea0f06c037538ffc87c6443ba83a3",
+			"keccak256": "0xbc2c121879b005840d66f2b8bc348e0024e9ea256b598cf30cb33fcdbce43c2c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://50394d6fe5937b2c9544304d9f3407a4efd0a8a246666c5a6e34cfc83fd1275b",
-				"dweb:/ipfs/Qmbk3AJTXk6E9hNFLUHJdUUjaKfZNdAsTUk3yA1aRTHUWZ"
-			]
-		},
-		"hardhat/console.sol": {
-			"keccak256": "0xf2560b5386574153057104d19a9e68a32ee912cf23c0c8df1fe9a0607f42d543",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://a63166e036b040826baa513772451a79925daa304b38749100efb089ac07cdc2",
-				"dweb:/ipfs/QmUtMTxUFKU6a5oFXsEJnTPvb3QPb7GDDmSv5yZ1jFHDwR"
+				"bzz-raw://18757fffa82894fc7a0a93251fd69ff3f46eb10ff1ecc6742bb0f18f11b42828",
+				"dweb:/ipfs/QmdmkbBvH3HGqT9LEVebSUTakesbAXfDztutvEVuAsM3kA"
 			]
 		}
 	},
