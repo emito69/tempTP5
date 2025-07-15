@@ -26,7 +26,7 @@ Solidity_TP4
 
 This contract demonstrates a recursive callback attack on contract Grader5.sol deployed y Sepolia.
 
-## Analysis
+## Hack Analysis
 
 ```solidity
 /* HACK ANALYSIS for Grader5 Vulnerability
