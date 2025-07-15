@@ -30,7 +30,7 @@ This contract demonstrates a recursive callback attack on contract Grader5.sol d
 
 - 🗝️ Smartcontract to hack: [Grader5 contract](https://sepolia.etherscan.io/address/0x5733eE985e22eFF46F595376d79e31413b1A1e16#code).
 
-```solidity
+```solidity annotate
 /* HACK ANALYSIS for Grader5 Vulnerability
 
   This vulnerability exists because Grader5 trusts that msg.sender will be a legitimate user 
@@ -84,7 +84,7 @@ This contract demonstrates a recursive callback attack on contract Grader5.sol d
 - Unique Name: Prepare a unique string (e.g., "Emiliano") not already registered in Grader5.
 
 ### 2. Deployment
-```javascript
+```javascript annotate
 // Example (Hardhat/ethers.js)
 const Jaquer = await ethers.getContractFactory("Jaquer");
 const jaquer = await Jaquer.deploy(GRADER5_ADDRESS, { value: 12 });
@@ -95,7 +95,7 @@ await jaquer.deployed();
 - Send ≥12 wei to cover the attack costs (in msg.value).
 
 ###  3. Execute the Attack
-```javascript
+```javascript annotate
 // Call attack() with your unique name and 12 wei
 await jaquer.attack("Emiliano", { value: 12 });
 ```
@@ -108,7 +108,7 @@ What happens:
 - Finally calls gradeMe("Emiliano") to register your grade (100 if first attacker).
 
 ### 4. Verify Success
-```javascript
+```javascript annotate
 // Check your grade in Grader5
 const grade = await grader5.students("Emiliano");
 console.log("Grade:", grade); // Should return 100 (if first attacker)
