@@ -94,57 +94,19 @@
 			}
 		],
 		"devdoc": {
-			"details": "Exploit contract targeting vulnerabilities in Grader5.sol",
 			"kind": "dev",
-			"methods": {
-				"attack(string)": {
-					"details": "Requires at least 12 wei to cover three retrieve() calls",
-					"params": {
-						"name": "The student name to register in the grading system"
-					}
-				},
-				"constructor": {
-					"details": "Initializes the contract with the target Grader5 address",
-					"params": {
-						"graderAddress": "Address of the vulnerable Grader5 contract"
-					}
-				},
-				"withdraw()": {
-					"details": "Can only be called by the owner"
-				}
-			},
-			"title": "Jaquer",
+			"methods": {},
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {
-				"attack(string)": {
-					"notice": "Initiates the attack on Grader5 contract"
-				},
-				"grader()": {
-					"notice": "Interface to interact with the vulnerable Grader5 contract"
-				},
-				"owner()": {
-					"notice": "Owner of the contract"
-				},
-				"retrieveCount()": {
-					"notice": "Counter for retrieve() calls made during attack"
-				},
-				"targetName()": {
-					"notice": "Name to be registered in the grading system"
-				},
-				"withdraw()": {
-					"notice": "Withdraws all ETH from the contract"
-				}
-			},
-			"notice": "This contract demonstrates a recursive callback attack on Grader5.sol",
+			"methods": {},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"jaquer3.sol": "Jaquer"
+			"jaquer.sol": "Jaquer"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -158,12 +120,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"jaquer3.sol": {
-			"keccak256": "0x1949564945737b8279a72375b8457637f7848232dde66a2c366c5cab3d2a51ab",
+		"jaquer.sol": {
+			"keccak256": "0x96c9d8746e28aee7700741838332ef10dedbc13c25cf9c26f85465aa96e6a1d4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b7e56cef65403bfb280b813742541ff94db9a93f3cd3f9f7520a29500f98ba3d",
-				"dweb:/ipfs/QmQFYCFKfGRTnnHXZWrdF4AHoXPzkmNdBJx6pArer75Xr8"
+				"bzz-raw://2baa2e82cca5400ec4f773376f28e04094325994d42228923bf4e9a4673370ef",
+				"dweb:/ipfs/QmfWoM3Nht73bz3oiHc6hGo3wssT8gdtNMTKbktn8GpAqt"
 			]
 		}
 	},
