@@ -33,8 +33,9 @@ This contract demonstrates a recursive callback attack on contract Grader5.sol d
 ```solidity annotate
 /* HACK ANALYSIS for Grader5 Vulnerability
 
-  This vulnerability exists because Grader5 trusts that msg.sender will be a legitimate user 
-  and doesn't verify if it's a contract that can callback Grader5 when it executes: 
+  This vulnerability exists because Grader5 trusts that msg.sender will be a legitimate user
+  from an Externally Owned Account (EOA) and doesn't verify if it's a contract that can 
+  callback Grader5 when it executes: 
        payable(msg.sender).call{value: 1, gas: gasleft()}("");
            - gasleft() in this context is a security best practice that ensures the 
              receiving contract has enough gas to execute
