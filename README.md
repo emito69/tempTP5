@@ -75,11 +75,11 @@ This contract demonstrates a recursive callback attack on contract Grader5.sol d
 ## Usage
 
 ### 1. Prerequisites
-Sepolia ETH: Fund your wallet with test ETH (faucet).
+- Sepolia ETH: Fund your wallet with test ETH (faucet).
 
-Grader5 Address: Have the target Grader5.sol contract address.
+- Grader5 Address: Have the target Grader5.sol contract address.
 
-Unique Name: Prepare a unique string (e.g., "Emiliano") not already registered in Grader5.
+- Unique Name: Prepare a unique string (e.g., "Emiliano") not already registered in Grader5.
 
 ### 2. Deployment
 ```javascript
