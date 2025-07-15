@@ -110,7 +110,7 @@ What happens:
 // Check your grade in Grader5
 const grade = await grader5.students("Emiliano");
 console.log("Grade:", grade); // Should return 100 (if first attacker)
-```javascript
+```
 
 ### 5. Withdraw Funds
 ```javascript
